@@ -1,0 +1,103 @@
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    background: #001d3d;
+    color: white;
+}
+
+.container {
+    max-width: 1100px;
+    padding: 40px;
+}
+
+/* GLASS BASE */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+/* TOP LAYOUT */
+.top {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* PROFILE */
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.pfp {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url('/assets/images/Profile.jpeg');
+    background-size: cover;
+}
+.socials {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socials li {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* ABOUT TEXT */
+.about p {
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+/* CERTIFICATIONS */
+.certifications h2 {
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.cert {
+    min-height: 140px;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    opacity: 0.9;
+}

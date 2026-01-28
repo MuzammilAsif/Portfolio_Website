@@ -90,6 +90,14 @@ aboutBtn.addEventListener("click", () => {
         opacity: 1,
         duration: 2,
         ease: "power3.inOut",
+        oncomplete: () => {
+            gsap.to(aboutBtn, {
+                scale: 1,
+                duration: 0.5,
+                delay: 1,
+                ease: "power3.inOut",
+            });
+        }
     });
     // After animation, redirect to about.html
     setTimeout(() => {

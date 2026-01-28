@@ -22,6 +22,7 @@ body.light {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -50,6 +51,7 @@ body {
     background-image: url("/assets/images/Profile.jpeg");
     background-size: cover;
     background-position: center;
+    cursor: pointer;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -270,7 +272,7 @@ body {
     width: 260px;
     border-radius: 50%;
     border: 3px solid var(--accent);
-    box-shadow: 0 0 20px var(--accent-glow), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 30px 1px #ffc300;
 }
 
 .about-text {
@@ -325,10 +327,10 @@ body {
 }
 
 .services-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
     gap: 30px;
+    justify-content: center;
 }
 
 /* Card Styles */
@@ -484,13 +486,14 @@ body {
 
 /* ===== CONTACT ===== */
 .contact {
-    padding: 100px 10%;
+    padding: 20px 10%;
     text-align: center;
 }
 
 .contact h1 {
     color: var(--accent);
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 .contact-actions {
@@ -512,7 +515,7 @@ body {
     transform: translateY(-4px);
 }
 
-.socials {
+/* .socials {
     margin-top: 30px;
     display: flex;
     justify-content: center;
@@ -527,7 +530,7 @@ body {
 
 .socials a:hover {
     opacity: 1;
-}
+} */
 
 .contact-icons {
     margin-top: 40px;
@@ -537,6 +540,7 @@ body {
 }
 
 .contact-icons img {
+    border-radius: 12px;
     width: 64px;
     height: 64px;
     transition: transform 0.3s ease;
@@ -545,6 +549,7 @@ body {
 
 .contact-icons img:hover {
     transform: translateY(-6px);
+    filter: drop-shadow(4px 6px 10px rgba(0, 0, 0, 0.699));
 }
 
 /* ===== FOOTER ===== */

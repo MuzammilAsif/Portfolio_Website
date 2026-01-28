@@ -30,10 +30,32 @@ body {
     background: var(--glass-bg);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid var(--glass-border);
+    border: 2px solid var(--glass-border);
     border-radius: 16px;
     padding: 20px;
 }
+.bi-arrow-left{
+    font-size: 22px;
+}
+.back-btn {
+    align-self: center;
+    margin-bottom: 15px;
+    height: 40px;
+    width: 70px;
+    border-radius: 16px;
+    border: 2px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: #fff;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+}
+
 
 /* TOP LAYOUT */
 .top {
@@ -75,6 +97,14 @@ body {
     border-radius: 8px;
     margin-bottom: 10px;
 }
+.socials li:hover {
+    background: var(--glass-border);
+    cursor: pointer;
+}
+.socials a{
+    text-decoration: none;
+    color: white;
+}
 
 /* ABOUT TEXT */
 .about p {
@@ -92,6 +122,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
+    cursor: pointer;
 }
 
 .cert {

@@ -14,19 +14,27 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo"></div>
+    <div class="logo"></div>
 
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <!-- <li><button class="contactBtn">
-                    <span class="btnText">Contact Me</span>
-                </button></li> -->
-        </ul>
+    <!-- Hamburger icon -->
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-    </nav>
+    <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li>
+            <button class="contactBtn" onclick="scrollToCalendly()">
+                <span class="btnText">Book a Consultation</span>
+            </button>
+        </li>
+    </ul>
+</nav>
+
 
     <!-- ===== HERO SECTION ===== -->
 
@@ -221,6 +229,9 @@
             Interested in collaborating, hiring, or just having a conversation?
             You can reach me directly through any of the platforms below.
         </p>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/muzammilasif257/30min"
+            style="min-width:320px;height:700px;">
+        </div>
 
         <div class="contact-icons">
             <a href="mailto:muzammilasif257@gmail.com" aria-label="Email">
@@ -249,11 +260,24 @@
     </footer>
 
     <!-- Main JS -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
         integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Calendly stuff here -->
+
+    <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+    <script>
+        function openCalendly() {
+            Calendly.initPopupWidget({
+                url: 'https://calendly.com/muzammilasif257/30min'
+            });
+            return false;
+        }
+    </script>
 
     <!-- Typed Text Animation Script -->
 

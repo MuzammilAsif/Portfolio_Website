@@ -152,3 +152,23 @@ gsap.from(".work-card", {
     stagger: 0.2,
     ease: "power4.out"
 });
+
+//calendly integration
+function scrollToCalendly() {
+    const calendlySection = document.getElementById("contact");
+    if (calendlySection) {
+        const yOffset = -80; // adjust if navbar is fixed
+        const y = calendlySection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+}
+
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('open');
+});
+

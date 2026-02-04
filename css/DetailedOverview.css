@@ -204,71 +204,97 @@ body {
 }
 
 /* Tablets / large phones */
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 20px;
-        width: 100%;
+@media (max-width: 768px) {
+
+    /* ===== BODY & CONTAINER ===== */
+    body {
+        align-items: flex-start;
+        padding: 20px 0;
     }
 
-    /* Top layout: single column but keep spacing readable */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .glass {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    /* ===== BACK BUTTON ===== */
+    .back-btn {
+        width: 100%;
+        max-width: 120px;
+        margin-bottom: 20px;
+    }
+
+    /* ===== TOP LAYOUT ===== */
     .top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    /* ===== PROFILE HEADER ===== */
+    .profile-header {
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    .pfp {
+        width: 70px;
+        height: 70px;
+    }
+
+    /* ===== SOCIAL LINKS ===== */
+    .socials li {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .about {
+        padding: 0;
+    }
+
+    .about p {
+        font-size: 1.05rem;       
+        line-height: 1.75;
+        margin-bottom: 18px;
+        opacity: 0.95;
+    }
+
+    .glass {
+        height: auto;
+        min-height: unset;
+    }
+
+
+    /* ===== CERTIFICATIONS ===== */
+    .certifications h2 {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .cert-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    /* Certificates: horizontal scroll for multiple items */
-    .cert-grid {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 15px;
-        padding-bottom: 10px;
-        scroll-behavior: smooth;
-    }
-
     .cert {
-        flex: 0 0 250px; /* fixed width per card */
-        height: 220px;
+        height: 440px;
+        padding: 16px;
+        font-size: 30px;
+        border-radius: 12px;
     }
 
-    /* Profile adjustments */
-    .pfp {
-        width: 60px;
-        height: 60px;
-    }
-
-    .socials li {
-        font-size: 14px;
-        padding: 6px;
-        gap: 6px;
+    /* Touch-friendly hover replacement */
+    .cert:hover::before {
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }
 
-/* Small phones */
-@media screen and (max-width: 480px) {
-    .container {
-        padding: 15px;
-    }
-
-    .back-btn {
-        width: 60px;
-        height: 35px;
-        font-size: 14px;
-    }
-
-    .cert {
-        flex: 0 0 180px;
-        height: 180px;
-        padding: 10px;
-        font-size: 11px;
-    }
-
-    .socials li {
-        font-size: 12px;
-        padding: 5px;
-        gap: 5px;
-    }
-}
 
 /* Extra small phones (<360px) */
 @media screen and (max-width: 360px) {

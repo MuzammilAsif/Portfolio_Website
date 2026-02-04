@@ -167,8 +167,29 @@ function scrollToCalendly() {
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
+/* Toggle menu */
+hamburger.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent document click from firing
     hamburger.classList.toggle('active');
     navLinks.classList.toggle('open');
 });
 
+/* Close when clicking a nav link */
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+    });
+});
+
+/* Close when clicking anywhere outside */
+document.addEventListener('click', (e) => {
+    if (
+        navLinks.classList.contains('open') &&
+        !navLinks.contains(e.target) &&
+        !hamburger.contains(e.target)
+    ) {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+    }
+});

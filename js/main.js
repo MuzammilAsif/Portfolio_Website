@@ -81,30 +81,36 @@ aboutTL.from(".about-text h1", {
 const aboutBtn = document.querySelector(".aboutBtn");
 
 aboutBtn.addEventListener("click", () => {
-    
+
     document.body.style.overflow = "hidden";
     aboutBtn.style.color = "transparent";
+
+    // Store original state
+    gsap.set(aboutBtn, {
+        transformOrigin: "center center"
+    });
 
     gsap.to(aboutBtn, {
         scale: 1000,
         opacity: 1,
-        duration: 2,
+        duration: 1,
         ease: "power3.inOut",
-        oncomplete: () => {
-            gsap.to(aboutBtn, {
+        onComplete: () => {
+
+            // RESET before navigation
+            gsap.set(aboutBtn, {
                 scale: 1,
-                duration: 0.5,
-                delay: 1,
-                ease: "power3.inOut",
+                opacity: 1,
+                clearProps: "all"
             });
+
+            document.body.style.overflow = "";
+
+            // Navigate AFTER reset
+            window.location.href = "DetailedOverview.html";
         }
     });
-    // After animation, redirect to about.html
-    setTimeout(() => {
-        window.location.href = "DetailedOverview.html";
-    }, 800); // Match the timeout with animation duration
 });
-
 
 
 // services section animation
